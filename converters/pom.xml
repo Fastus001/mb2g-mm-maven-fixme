@@ -5,23 +5,36 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>mb2g-mm-maven-fixme</artifactId>
         <groupId>guru.springframework</groupId>
+        <artifactId>mb2g-mm-maven-fixme</artifactId>
         <version>${revision}</version>
     </parent>
 
     <artifactId>converters</artifactId>
 
+    <packaging>jar</packaging>
+
     <properties>
-        <!--<mapstruct.version>1.2.0.Final</mapstruct.version>-->
+        <org.mapstruct.version>1.4.1.Final</org.mapstruct.version>
     </properties>
 
     <dependencies>
         <dependency>
+            <groupId>guru.springframework</groupId>
+            <artifactId>jpa-entities</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>guru.springframework</groupId>
+            <artifactId>web-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
-            <version>${mapstruct.version}</version>
+            <version>${org.mapstruct.version}</version>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -35,7 +48,7 @@
                         <path>
                             <groupId>org.mapstruct</groupId>
                             <artifactId>mapstruct-processor</artifactId>
-                            <version>${mapstruct.version}</version>
+                            <version>${org.mapstruct.version}</version>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
